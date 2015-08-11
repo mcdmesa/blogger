@@ -1,17 +1,17 @@
-class TagController < ApplicationController
+class TagsController < ApplicationController
 
   def index
-    @tag = Tag.all
+    @tags = Tag.all
   end
 
   def show
-    @tag = Tag.find(params[:id])
+    @tags = Tag.find(params[:id])
   end
 
   def destroy
-      @tag = Tag.find(params[:id])
-      @tag.destroy
-      flash[:notice] = "Tag '#{@tag.name}' destroyed!"
+      @tags = Tag.find(params[:id])
+      @tags.destroy
+      flash[:notice] = "Tag '#{@tags.name}' destroyed!"
       redirect_to tags_path
-    end  
+    end
 end
